@@ -3,12 +3,12 @@ const db = require("../connection");
 
 const seed = ({ projectData, stackData }) => {
   return db
-    .query(`DROP TABLE IF EXISTS projects;`)
+    .query(`DROP TABLE IF EXISTS project_stack;`)
     .then(() => {
       return db.query(`DROP TABLE IF EXISTS stack;`);
     })
     .then(() => {
-      return db.query(`DROP TABLE IF EXISTS project_stack;`);
+      return db.query(`DROP TABLE IF EXISTS projects;`);
     })
     .then(() => {
       const projectTablePromise = db.query(`
@@ -34,8 +34,8 @@ const seed = ({ projectData, stackData }) => {
       return db.query(`
         CREATE TABLE project_stack (
             project_stack_id SERIAL PRIMARY KEY,
-            project_id INT REFERENCES projects(project_id),
-            stack_id INT REFERENCES stack(stack_id)
+            project_id INT REFERENCES projects(project_id) ON DELETE CASCADE,
+            stack_id INT REFERENCES stack(stack_id) ON DELETE CASCADE
         );`);
     })
     .then(() => {
