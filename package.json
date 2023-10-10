@@ -6,5 +6,10 @@
   },
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "scripts": {
+    "setup-dbs": "psql -f ./db/setup.sql",
+    "seed": "node ./db/seeds/runSeed.js",
+    "test": "jest"
   }
 }
