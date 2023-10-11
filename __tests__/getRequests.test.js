@@ -78,3 +78,36 @@ describe("GET: /project/:project_id", () => {
       });
   });
 });
+
+describe("GET: /api/projects/:project_id/stack", () => {
+  test("200: returns array of correct stack", () => {
+    return request(app)
+      .get("/api/projects/1/stack")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body.stack).toEqual([
+          "TypeScript",
+          "Firebase",
+          "React Native",
+          "Node",
+          "Expo",
+        ]);
+      });
+  });
+  test("400: errors when project does not exist", () => {
+    return request(app)
+      .get("/api/projects/5/stack")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Project ID does not exist");
+      });
+  });
+  test("404: errors when unsuitable article id given", () => {
+    return request(app)
+      .get("/api/projects/banana/stack")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Invalid project ID");
+      });
+  });
+});
