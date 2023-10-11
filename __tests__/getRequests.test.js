@@ -86,11 +86,11 @@ describe("GET: /api/projects/:project_id/stack", () => {
       .expect(200)
       .then(({ body }) => {
         expect(body.stack).toEqual([
-          "TypeScript",
-          "Firebase",
-          "React Native",
+          "JavaScript",
+          "PSQL",
+          "Express",
+          "React",
           "Node",
-          "Expo",
         ]);
       });
   });
@@ -108,6 +108,34 @@ describe("GET: /api/projects/:project_id/stack", () => {
       .expect(404)
       .then(({ body }) => {
         expect(body.msg).toBe("Invalid project ID");
+      });
+  });
+});
+describe("GET: projects filtered by stack", () => {
+  test("200: returns projects of a specific stack", () => {
+    return request(app)
+      .get("/api/projects?stack=typescript")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body.projects).toEqual([
+          {
+            github_link_be: null,
+            github_link_fe: "https://github.com/msmi1433/Bookclub",
+            project_description: `Shelf Indulgence is an app-based solution to book clubs, providing users with a digital space to connect with like-minded readers and share their love of literature.\nThe app allows users to create and join book clubs which house a number of features, aiming to replicate the 'real-world' book club experience.`,
+            project_id: 2,
+            project_name: "Shelf Indulgence",
+            video: "https://youtu.be/U90IccAHrEU?si=3LKdmyFgQb02ILTU",
+            image: null,
+          },
+        ]);
+      });
+  });
+  test("400: errors when queried stack does not exist", () => {
+    return request(app)
+      .get("/api/projects?stack=c")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Queried stack does not exist");
       });
   });
 });
