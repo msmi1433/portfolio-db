@@ -2,7 +2,6 @@ const { selectProjectStack } = require("../models/stack.model");
 const { selectProjectById } = require("../models/projects.models");
 
 exports.getProjectStack = (req, res, next) => {
-  console.log("hi");
   const { project_id } = req.params;
   selectProjectById(project_id)
     .then(() => {
@@ -12,7 +11,6 @@ exports.getProjectStack = (req, res, next) => {
       res.status(200).send({ stack });
     })
     .catch((err) => {
-      console.log(err);
       next(err);
     });
 };

@@ -12,7 +12,7 @@ module.exports = [
     name: "Shelf Indulgence",
     description:
       "Shelf Indulgence is an app-based solution to book clubs, providing users with a digital space to connect with like-minded readers and share their love of literature.\nThe app allows users to create and join book clubs which house a number of features, aiming to replicate the 'real-world' book club experience.",
-    githubLinkFe: "https://github.com/msmi1433/msmi-news",
+    githubLinkFe: "https://github.com/msmi1433/Bookclub",
     githubLinkBe: null,
     image: null,
     video: "https://youtu.be/U90IccAHrEU?si=3LKdmyFgQb02ILTU",
