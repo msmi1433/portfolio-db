@@ -1,0 +1,50 @@
+[
+  {
+    "GET: '/api/projects": {
+      "description": "serves an array of all projects in the database",
+      "queries": ["stack"],
+      "example-response": [
+        {
+          "project_name": "string",
+          "project_id": "number",
+          "project_description": "string",
+          "image": "string || null",
+          "video": " string|| null",
+          "github_repo_fe": "string || null",
+          "github_repo_be": "string || null"
+        },
+        {
+          "project_name": "string",
+          "project_id": "number",
+          "project_description": "string",
+          "image": "string || null",
+          "video": " string|| null",
+          "github_repo_fe": "string || null",
+          "github_repo_be": "string || null"
+        }
+      ]
+    }
+  },
+  {
+    "GET: /api/projects/:project_id": {
+      "description": "serves an object conatining specified project id",
+      "example-response": [
+        {
+          "project_name": "string",
+          "project_id": "number",
+          "project_description": "string",
+          "image": "string || null",
+          "video": " string|| null",
+          "github_repo_fe": "string || null",
+          "github_repo_be": "string || null"
+        }
+      ]
+    }
+  },
+  {
+    "GET: /api/projects/:project_id/stack": {
+      "description": "serves an array of the tech stack used to build the specified project",
+      "example-response": ["JavaScript", "PSQL", "Express", "React"]
+    }
+  }
+]
