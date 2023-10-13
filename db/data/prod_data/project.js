@@ -17,6 +17,6 @@ module.exports = [
     githubLinkFe: "https://github.com/msmi1433/Bookclub",
     githubLinkBe: null,
     image: null,
-    video: "https://youtu.be/U90IccAHrEU?si=3LKdmyFgQb02ILTU",
+    video: "https://www.youtube.com/embed/U90IccAHrEU?si=kVtAPF94sJ7SzXon",
   },
 ];

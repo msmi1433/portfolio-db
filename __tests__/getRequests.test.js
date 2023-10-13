@@ -126,7 +126,8 @@ describe("GET: projects filtered by stack", () => {
             project_description: `Shelf Indulgence is an app-based solution to book clubs, providing users with a digital space to connect with like-minded readers and share their love of literature.\nThe app allows users to create and join book clubs which house a number of features, aiming to replicate the 'real-world' book club experience.`,
             project_id: 2,
             project_name: "Shelf Indulgence",
-            video: "https://youtu.be/U90IccAHrEU?si=3LKdmyFgQb02ILTU",
+            video:
+              "https://www.youtube.com/embed/U90IccAHrEU?si=kVtAPF94sJ7SzXon",
             image: null,
           },
         ]);
