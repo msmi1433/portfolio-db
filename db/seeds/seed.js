@@ -16,6 +16,7 @@ const seed = ({ projectData, stackData }) => {
             project_id SERIAL PRIMARY KEY,
             project_name VARCHAR,
             project_description VARCHAR,
+            project_link VARCHAR,
             github_link_fe VARCHAR,
             github_link_be VARCHAR,
             image VARCHAR,
@@ -40,11 +41,20 @@ const seed = ({ projectData, stackData }) => {
     })
     .then(() => {
       const insertProjectsQueryStr = format(
-        "INSERT INTO projects (project_name, project_description, github_link_fe, github_link_be, image, video) VALUES %L;",
+        "INSERT INTO projects (project_name, project_description, project_link, github_link_fe, github_link_be, image, video) VALUES %L;",
         projectData.map(
-          ({ name, description, githubLinkFe, githubLinkBe, image, video }) => [
+          ({
             name,
             description,
+            project_link,
+            githubLinkFe,
+            githubLinkBe,
+            image,
+            video,
+          }) => [
+            name,
+            description,
+            project_link,
             githubLinkFe,
             githubLinkBe,
             image,
