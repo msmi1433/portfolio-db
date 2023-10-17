@@ -44,8 +44,7 @@ describe("GET: /project/:project_id", () => {
           project_id: 1,
           project_name: "MSMI News",
           project_description:
-            "This project provides the user with an interactive news website, utilising an API created with Express.js and a frontend built with React.\n" +
-            "The app allows users to read various news articles, with filtering and sorting options available. Users can also interact with articles by voting on them and posting comments. Comments have a votes feature and can be deleted when logged in as the user that posted the comment (user selection is implemented without authentication, currently).",
+            "This project provides the user with an interactive news website, utilising an API created with Express.js and a frontend built with React. The app allows users to read various news articles, with filtering and sorting options available. Users can also interact with articles by voting on them and posting comments. Comments have a votes feature and can be deleted when logged in as the user that posted the comment (user selection is implemented without authentication, currently).",
           project_link: "https://msmi-news.netlify.app/",
           github_link_fe: "https://github.com/msmi1433/msmi-news",
           github_link_be: "https://github.com/msmi1433/nc-news-project",
@@ -124,7 +123,7 @@ describe("GET: projects filtered by stack", () => {
             github_link_fe: "https://github.com/msmi1433/Bookclub",
             project_link: null,
             project_description:
-              "Shelf Indulgence is an app-based solution to book clubs, providing users with a digital space to connect with like-minded readers and share their love of literature.\nThe app allows users to create and join book clubs which house a number of features, aiming to replicate the 'real-world' book club experience. Shelf Indulgence was built during the final group project phase of the Northocders bootcamp, and I am planning to refine/add new features to the app moving forward.",
+              "Shelf Indulgence is an app-based solution to book clubs, providing users with a digital space to connect with like-minded readers and share their love of literature. The app allows users to create and join book clubs which house a number of features, aiming to replicate the 'real-world' book club experience. Shelf Indulgence was built during the final group project phase of the Northocders bootcamp, and I am planning to refine/add new features to the app moving forward.",
             project_id: 2,
             project_name: "Shelf Indulgence",
             video:
